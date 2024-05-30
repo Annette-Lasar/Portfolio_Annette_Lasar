@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@import './scss-styles/reset_stylesheet.scss';
+@import './scss-styles/fonts.scss';
+@import './scss-styles/variables.scss';
+
+
+body {
+    background-color: $background-color-light;
+    color: $font-color;
+  }
+  
+  h1, h2 {
+      font-family: 'Syne', sans-serif;
+  }
+  
+  h1 {
+    font-size: clamp(2rem, 9vw, 6rem);
+    font-weight: 800;
+    text-align: center;
+    font-family: "Syne", sans-serif;
+  }
+  
+  h3,
+  h4,
+  app-button,
+  p {
+    font-family: "Overpass", sans-serif;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 7vw, 4rem);
+    text-align: center;
+    font-weight: 800;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  
+  h4 {
+    font-size: clamp(1.1rem, 5vw, 3rem);
+    font-weight: 800;
+    font-family: "Overpass", sans-serif;
+    color: $accent-color;
+  }
+  
+  app-button {
+    a {
+      width: fit-content;
+      margin: 0 auto;
+      padding: 1em 2em;
+      display: block;
+      text-decoration: none;
+      color: $font-color;
+      border: $background-color-dark 4px solid;
+    }
+  }
+  
+  .d-none {
+    display: none;
+  }
+  
