@@ -1,1 +1,11 @@
-<p>skills works!</p>
+<section>
+  <div class="skill-wrapper">
+    <h2>My&nbsp;Skills</h2>
+    <div class="skill-box">
+      <div *ngFor="let icon of skillIcons" class="icon-box">
+        <img src="{{ icon.path }}" alt="" />
+        <p class="caption">{{ icon.caption }}</p>
+      </div>
+    </div>
+  </div>
+</section>

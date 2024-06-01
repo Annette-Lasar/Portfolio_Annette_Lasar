@@ -1,0 +1,29 @@
+@import '../../../scss-styles/variables.scss';
+
+
+section {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+p {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
+.img-box {
+    max-width: 552px;
+    position: relative;
+    .frame {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 8px;
+        left: 8px; 
+        border: $background-color-dark 2px solid;
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

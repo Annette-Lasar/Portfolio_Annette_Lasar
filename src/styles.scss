@@ -21,8 +21,9 @@ body {
   
   h3,
   h4,
-  app-button,
-  p {
+  po-button,
+  p, 
+  a {
     font-family: "Overpass", sans-serif;
   }
   
@@ -42,7 +43,7 @@ body {
     color: $accent-color;
   }
   
-  app-button {
+  po-button {
     a {
       width: fit-content;
       margin: 0 auto;

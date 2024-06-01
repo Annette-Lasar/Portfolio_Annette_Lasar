@@ -1,1 +1,20 @@
-<p>hero works!</p>
+<section *ngIf="staticContent">
+  <div class="title-box">
+    <h1>Frontend Developer</h1>
+    <div class="name-box">
+      <div class="deco-line"></div>
+      <h4 *ngIf="staticContent.candidate_name">{{ staticContent.candidate_name}}</h4>
+    </div>
+  </div>
+  <po-button></po-button>
+  <div class="info-box">
+    <p *ngIf="staticContent.email" class="email">{{staticContent.email}}</p>
+    <div class="arrow-box">
+      <img *ngIf="staticContent.arrows" src="{{staticContent.arrows[1]}}" alt="" />
+    </div>
+  </div>
+
+  <figure class="splatter" *ngIf="staticContent.ink_blot">
+   <img src="{{staticContent.ink_blot}}" alt="">
+  </figure>
+</section>

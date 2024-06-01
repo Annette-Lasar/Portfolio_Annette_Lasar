@@ -1,0 +1,52 @@
+@import "../../../scss-styles/variables.scss";
+
+section {
+  min-height: calc(80vh - $header-height);
+  padding-inline: 1em;
+}
+
+.title-box {
+  max-width: 850px;
+  margin: 3rem auto;
+}
+
+.name-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.deco-line {
+  width: 50%;
+  height: 3px;
+  background-color: $background-color-dark;
+}
+
+.info-box {
+  margin: 3rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(270deg) translateX(-10%);
+    transform-origin: 0% 0%;
+    font-size: 0.75rem;
+  }
+}
+
+.splatter {
+  width: 100px;
+  position: absolute;
+  left: 20%;
+  bottom: 20%;
+}
+
+svg {
+  height: 96px;
+  max-width: 100%;
+}

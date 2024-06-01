@@ -1,0 +1,29 @@
+@import "../../../scss-styles/variables.scss";
+
+section {
+  padding: 1em;
+}
+
+.skill-wrapper {
+  position: relative;
+  border: $background-color-dark 3px solid;
+  h2 {
+    width: fit-content;
+    padding-inline: 0.5em;
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    background-color: $background-color-light;
+  }
+}
+
+.skill-box {
+  width: 100%;
+  padding: 2em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

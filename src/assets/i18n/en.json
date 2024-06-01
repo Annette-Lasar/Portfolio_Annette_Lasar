@@ -19,10 +19,36 @@
   },
   "portfolio": {
     "introduction": "Explore a selection of my work here. - Interact with projects to see my skills in action. While coding, I always follow the 'Small Screen First' principle.",
-    "description_join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-    "description_mermaid": "A simple swim-and-shoot game based on an object-oriented approach. Help the mermaid to find pearls and stars to fight against a variety of fish and collect the golden key to open the treasure chest in the end.",
-    "description_pokedex": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
-    "button": "Test"
+    "projects": [
+      {
+        "join": {
+          "path": "join.png",
+          "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+          "skills": ["HTML", "CSS", "JavaScript"],
+          "test_button": "Try it out",
+          "code_button": "Github"
+        }
+      }, 
+      {
+        "mermaid": {
+          "path": "mermaid.png",
+          "description": "A simple swim-and-shoot game based on an object-oriented approach. Help the mermaid to find pearls and stars to fight against a variety of fish and collect the golden key to open the treasure chest in the end.",
+          "skills": ["JavaScript", "HTML", "CSS"],
+          "test_button": "Try it out",
+          "code_button": "Github"
+        }
+      },
+
+      {
+        "pokedex": {
+          "path": "pokedex.png",
+          "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
+          "skills": ["JavaScript", "HTML", "CSS", "API"],
+          "test_button": "Try it out",
+          "code_button": "Github"
+        }
+      }
+    ]
   },
   "contact": {
     "greeting": "Say Hi!",

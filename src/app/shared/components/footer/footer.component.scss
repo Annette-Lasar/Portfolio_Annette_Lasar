@@ -1,0 +1,28 @@
+@import "../../../../scss-styles/variables.scss";
+
+section {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $background-color-dark;
+}
+
+.name-box {
+  img {
+    height: 32px;
+    filter: invert(91%) sepia(2%) saturate(2879%) hue-rotate(321deg)
+      brightness(109%) contrast(105%);
+    color: $background-color-light;
+  }
+  p {
+    color: $background-color-light;
+  }
+}
+
+.contact-icon-box {
+  text-align: right;
+  a {
+    color: $background-color-light;
+  }
+}

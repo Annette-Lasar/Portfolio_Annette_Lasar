@@ -1,35 +1,55 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StaticContentService } from '../../services/static-content.service';
+import { Static } from '../../interfaces/static-content.interface';
+import { SharedModule } from '../../shared.module';
 
 @Component({
   selector: 'po-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SharedModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
-  selectedLanguage = 'Deutsch';
-  selectedFlag = 'assets/icons/flags/german_flag.svg';
+export class HeaderComponent implements OnInit {
+  staticContent: Static | null = null;
+  selectedLanguage = 'English';
+  selectedFlag = 'assets/icons/flags/english_flag.svg';
   dropdownOpen = false;
+  isActive = false;
 
-  languageOptions = [
-    {
-      value: 'german',
-      label: 'Deutsch',
-      flag: 'assets/icons/flags/german_flag.svg',
-    },
-    {
-      value: 'english',
-      label: 'English',
-      flag: 'assets/icons/flags/english_flag.svg',
-    },
-    {
-      value: 'french',
-      label: 'Français',
-      flag: 'assets/icons/flags/french_flag.svg',
-    },
-  ];
+  languageOptions: {
+    value: string;
+    label: string;
+    flag: string;
+  }[] = [];
+
+  constructor(private staticContentService: StaticContentService) {}
+
+  ngOnInit(): void {
+    this.staticContentService.getStaticContent().subscribe((data: Static) => {
+      this.staticContent = data;
+      if (this.staticContent) {
+        this.languageOptions = [
+          {
+            value: 'german',
+            label: 'Deutsch',
+            flag: this.staticContent.german_flag,
+          },
+          {
+            value: 'english',
+            label: 'English',
+            flag: this.staticContent.english_flag,
+          },
+          {
+            value: 'french',
+            label: 'Français',
+            flag: this.staticContent.french_flag,
+          },
+        ];
+      }
+    });
+  }
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
@@ -40,5 +60,9 @@ export class HeaderComponent {
     this.selectedLanguage = option.label;
     this.selectedFlag = option.flag;
     this.dropdownOpen = false;
+  }
+
+  toggleBurgerButton() {
+    this.isActive = !this.isActive;
   }
 }

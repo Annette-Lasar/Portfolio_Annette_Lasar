@@ -1,26 +1,33 @@
-<section>
-    <img class="logo" src="assets/icons/logo_lasar.svg" alt="" />
-    <nav class="menu-box">
-      <div class="custom-select-container">
-        <div class="custom-select" (click)="toggleDropdown()">
-          <div class="custom-select-trigger">
-            <img [src]="selectedFlag" alt="" class="flag" />
-          </div>
-          <div [ngClass]="{ 'd-none': !dropdownOpen }" class="custom-options">
-            <div
-              class="custom-option"
-              *ngFor="let option of languageOptions"
-              (click)="selectLanguage(option, $event)"
-            >
-              <img [src]="option.flag" alt="" class="flag" />
-            </div>
+<section *ngIf="staticContent">
+  <img *ngIf="staticContent.candidate_logo" class="logo" src="{{staticContent.candidate_logo}}" alt="" />
+  <nav class="menu-box">
+    <div class="custom-select-container">
+      <div class="custom-select" (click)="toggleDropdown()">
+        <div class="custom-select-trigger">
+          <img [src]="selectedFlag" alt="" class="flag" />
+        </div>
+        <div [ngClass]="{ 'd-none': !dropdownOpen }" class="custom-options">
+          <div
+            class="custom-option"
+            *ngFor="let option of languageOptions"
+            (click)="selectLanguage(option, $event)"
+          >
+            <img [src]="option.flag" alt="" class="flag" />
           </div>
         </div>
       </div>
-      <img
-        class="burger"
-        src="../../assets/icons/hamburger_animation/burger_01.svg"
-        alt=""
-      />
-    </nav>
-  </section>
+    </div>
+    <div
+      (click)="toggleBurgerButton()"
+      
+      [class.is-active]="isActive"
+      id="hamburger"
+      class="hamburger"
+    >
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </nav>
+</section>
+
