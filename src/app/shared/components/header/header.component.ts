@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { StaticContentService } from '../../services/static-content.service';
 import { Static } from '../../interfaces/static-content.interface';
-import { SharedModule } from '../../shared.module';
+import { HttpClientModule } from '@angular/common/http';
+// import { SharedModule } from '../../shared.module';
 
 @Component({
   selector: 'po-header',
   standalone: true,
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StaticContentService } from '../../shared/services/static-content.service';
+import { Static } from '../../shared/interfaces/static-content.interface';
+import { CommonModule } from '@angular/common';
+// import { SharedModule } from '../../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 interface Portfolio {
   title: string;
@@ -10,17 +15,29 @@ interface Portfolio {
 @Component({
   selector: 'po-portfolio',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss'
+  styleUrl: './portfolio.component.scss',
 })
-export class PortfolioComponent {
-myPortfolio: Portfolio[] = [{
-  title: 'Join',
-  skills: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
-  description: '',
-  path: '',
-}
-  
-];
+export class PortfolioComponent implements OnInit {
+  staticContent: Static | null = null;
+
+  constructor(private staticContentService: StaticContentService) {}
+
+
+  /* später löschen */
+  myPortfolio: Portfolio[] = [
+    {
+      title: 'Join',
+      skills: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
+      description: '',
+      path: '',
+    },
+  ];
+
+  ngOnInit(): void {
+    this.staticContentService.getStaticContent().subscribe((data: Static) => {
+      this.staticContent = data;
+    });
+  }
 }

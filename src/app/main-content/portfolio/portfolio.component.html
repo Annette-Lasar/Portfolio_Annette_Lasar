@@ -1,2 +1,6 @@
-<p>portfolio works!</p>
-<img src="assets/img/projects/mermaid.png" alt="">
+<section *ngIf="staticContent">
+  <h2 *ngIf="staticContent.portfolio_title">
+    {{ staticContent.portfolio_title }}
+  </h2>
+  <img src="assets/img/projects/mermaid.png" alt="" />
+</section>

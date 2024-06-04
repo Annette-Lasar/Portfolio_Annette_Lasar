@@ -1,0 +1,18 @@
+@import '../../scss-styles/variables.scss';
+
+section {
+    padding: 1em;
+    min-height: calc(100vh - $header-height - $footer-height);
+}
+
+h1 {
+    margin: 0 0 1em;
+}
+
+h2 {
+    margin: 0.5em 0;
+}
+
+.seal {
+    margin: 1em 0 0;
+}

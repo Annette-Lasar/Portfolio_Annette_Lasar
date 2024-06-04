@@ -1,6 +1,7 @@
 @import "../../../../scss-styles/variables.scss";
 
 section {
+  height: $footer-height;
   padding: 1em;
   display: flex;
   align-items: center;
