@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { StaticContentService } from '../../services/static-content.service';
 import { Static } from '../../interfaces/static-content.interface';
 import { HttpClientModule } from '@angular/common/http';
-// import { SharedModule } from '../../shared.module';
+import { MenuStateService } from '../../services/menu-state.service';
 
 @Component({
   selector: 'po-header',
@@ -25,7 +25,10 @@ export class HeaderComponent implements OnInit {
     flag: string;
   }[] = [];
 
-  constructor(private staticContentService: StaticContentService) {}
+  constructor(
+    private staticContentService: StaticContentService,
+    private menuStateService: MenuStateService
+  ) {}
 
   ngOnInit(): void {
     this.staticContentService.getStaticContent().subscribe((data: Static) => {
@@ -65,5 +68,6 @@ export class HeaderComponent implements OnInit {
 
   toggleBurgerButton() {
     this.isActive = !this.isActive;
+    this.menuStateService.toggleMenuVisibility();
   }
 }

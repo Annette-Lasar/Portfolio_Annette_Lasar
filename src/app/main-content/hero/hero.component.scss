@@ -3,6 +3,7 @@
 section {
   min-height: calc(80vh - $header-height);
   padding-inline: 1em;
+  // position: relative;
 }
 
 .title-box {
@@ -18,7 +19,7 @@ section {
 }
 
 .deco-line {
-  width: 50%;
+  width: 40%;
   height: 3px;
   background-color: $background-color-dark;
 }
@@ -43,7 +44,7 @@ section {
   width: 100px;
   position: absolute;
   left: 20%;
-  bottom: 20%;
+  bottom: 30%;
 }
 
 svg {

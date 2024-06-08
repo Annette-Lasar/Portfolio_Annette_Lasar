@@ -5,9 +5,14 @@ section {
   margin: 0 auto;
   height: $header-height;
   padding-inline: 1em;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: $background-color-light;
   .logo {
     height: 28px;
   }
@@ -35,7 +40,6 @@ img {
 
 .custom-select {
   position: relative;
-  //   cursor: pointer;
   user-select: none;
 }
 
@@ -72,7 +76,6 @@ img {
 }
 
 .custom-option .flag {
-  //   margin-right: 10px;
   margin: 0 auto;
   width: 24px;
   height: auto;

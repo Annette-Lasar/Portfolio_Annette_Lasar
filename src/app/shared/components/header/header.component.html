@@ -1,4 +1,4 @@
-<section *ngIf="staticContent">
+<section id="top" *ngIf="staticContent">
   <img *ngIf="staticContent.candidate_logo" class="logo" src="{{staticContent.candidate_logo}}" alt="" />
   <nav class="menu-box">
     <div class="custom-select-container">
@@ -19,7 +19,6 @@
     </div>
     <div
       (click)="toggleBurgerButton()"
-      
       [class.is-active]="isActive"
       id="hamburger"
       class="hamburger"

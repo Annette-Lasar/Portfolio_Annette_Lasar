@@ -1,0 +1,40 @@
+@import "../../../../scss-styles/variables.scss";
+
+section {
+  height: calc(100vh - $header-height);
+  width: 100%;
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  z-index: 5;
+  background-color: $background-color-light;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+nav {
+  height: calc(100vh - $header-height - $footer-height - 200px);
+  height: calc(100dvh - $header-height - $footer-height - 200px);
+    ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5em;
+        border: red 2px solid;
+    }
+}
+
+.menu-bottom {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+//   justify-content: center;
+  color: $background-color-light;
+  background-color: $background-color-dark;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+}

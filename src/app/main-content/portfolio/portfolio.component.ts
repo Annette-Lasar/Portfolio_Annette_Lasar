@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { StaticContentService } from '../../shared/services/static-content.service';
 import { Static } from '../../shared/interfaces/static-content.interface';
 import { CommonModule } from '@angular/common';
-// import { SharedModule } from '../../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 
 interface Portfolio {
