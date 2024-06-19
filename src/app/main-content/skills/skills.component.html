@@ -1,9 +1,9 @@
-<section>
+<section *ngIf="staticContent && jsonContent">
   <div class="skill-wrapper">
-    <h2>My&nbsp;Skills</h2>
+    <h2 id="skills" *ngIf="jsonContent.skills.skills">{{jsonContent.skills.skills}}</h2>
     <div class="skill-box">
-      <div *ngFor="let icon of skillIcons" class="icon-box">
-        <img src="{{ icon.path }}" alt="" />
+      <div *ngFor="let icon of staticContent?.candidate_skills" class="icon-box">
+        <img src="{{ icon.icon_path }}" alt="" />
         <p class="caption">{{ icon.caption }}</p>
       </div>
     </div>

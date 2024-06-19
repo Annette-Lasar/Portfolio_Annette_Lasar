@@ -4,6 +4,8 @@ import { StaticContentService } from '../../services/static-content.service';
 import { Static } from '../../interfaces/static-content.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuStateService } from '../../services/menu-state.service';
+import { TranslationService } from '../../services/translation.service';
+import { LanguageOption } from '../../interfaces/language-option.interface';
 
 @Component({
   selector: 'po-header',
@@ -14,20 +16,17 @@ import { MenuStateService } from '../../services/menu-state.service';
 })
 export class HeaderComponent implements OnInit {
   staticContent: Static | null = null;
-  selectedLanguage = 'English';
+  selectedLanguage = 'en';
   selectedFlag = 'assets/icons/flags/english_flag.svg';
   dropdownOpen = false;
   isActive = false;
 
-  languageOptions: {
-    value: string;
-    label: string;
-    flag: string;
-  }[] = [];
+  languageOptions: LanguageOption[] = [];
 
   constructor(
     private staticContentService: StaticContentService,
-    private menuStateService: MenuStateService
+    private menuStateService: MenuStateService,
+    private translationService: TranslationService
   ) {}
 
   ngOnInit(): void {
@@ -36,22 +35,26 @@ export class HeaderComponent implements OnInit {
       if (this.staticContent) {
         this.languageOptions = [
           {
-            value: 'german',
+            value: 'de',
             label: 'Deutsch',
             flag: this.staticContent.german_flag,
           },
           {
-            value: 'english',
+            value: 'en',
             label: 'English',
             flag: this.staticContent.english_flag,
           },
           {
-            value: 'french',
+            value: 'fr',
             label: 'Français',
             flag: this.staticContent.french_flag,
           },
         ];
       }
+    });
+
+    this.menuStateService.burgerButtonActive$.subscribe(active => {
+      this.isActive = active;
     });
   }
 
@@ -59,15 +62,16 @@ export class HeaderComponent implements OnInit {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
-  selectLanguage(option: any, event: Event) {
+  selectLanguage(option: LanguageOption, event: Event) {
     event.stopPropagation();
     this.selectedLanguage = option.label;
     this.selectedFlag = option.flag;
     this.dropdownOpen = false;
+    this.translationService.loadTranslations(option.value).subscribe(() => {
+    });
   }
 
   toggleBurgerButton() {
-    this.isActive = !this.isActive;
     this.menuStateService.toggleMenuVisibility();
   }
 }

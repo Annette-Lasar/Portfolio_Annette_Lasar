@@ -1,6 +1,6 @@
-<section *ngIf="staticContent">
+<section *ngIf="staticContent && jsonContent">
   <div class="title-box">
-    <h1>Frontend Developer</h1>
+    <h1 *ngIf="jsonContent.hero.profession">{{jsonContent.hero.profession}}</h1>
     <div class="name-box">
       <div class="deco-line"></div>
       <h4 *ngIf="staticContent.candidate_name">
@@ -23,5 +23,5 @@
   <figure class="splatter" *ngIf="staticContent.ink_blot">
     <img src="{{ staticContent.ink_blot }}" alt="" />
   </figure>
-  <po-menu [ngClass]="{ 'd-none': !menuVisible }" class="main-menu"></po-menu>
+  <po-menu [ngClass]="{ 'd-none': !menuActive }" class="main-menu"></po-menu>
 </section>

@@ -1,63 +1,42 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StaticContentService } from '../../shared/services/static-content.service';
+import { Static } from '../../shared/interfaces/static-content.interface';
+import { TranslationService } from '../../shared/services/translation.service';
+import { Translations } from '../../shared/interfaces/translations.interface';
+import { HttpClientModule } from '@angular/common/http';
 
-interface SkillIcon {
-  path: string;
-  caption: string;
-}
 
 @Component({
   selector: 'po-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
 })
-export class SkillsComponent {
-  skillIcons: SkillIcon[] = [
-    {
-      path: 'assets/icons/skill_icons/angular.svg',
-      caption: 'Angular',
-    },
-    {
-      path: 'assets/icons/skill_icons/typescript.svg',
-      caption: 'TypeScript',
-    },
-    {
-      path: 'assets/icons/skill_icons/javascript.svg',
-      caption: 'JavaScript',
-    },
-    {
-      path: 'assets/icons/skill_icons/html.svg',
-      caption: 'HTML',
-    },
-    {
-      path: 'assets/icons/skill_icons/css.svg',
-      caption: 'CSS',
-    },
-    {
-      path: 'assets/icons/skill_icons/firebase.svg',
-      caption: 'Firebase',
-    },
-    {
-      path: 'assets/icons/skill_icons/git.svg',
-      caption: 'Git',
-    },
-    {
-      path: 'assets/icons/skill_icons/api.svg',
-      caption: 'API',
-    },
-    {
-      path: 'assets/icons/skill_icons/scrum.svg',
-      caption: 'SCRUM',
-    },
-    {
-      path: 'assets/icons/skill_icons/material_design.svg',
-      caption: 'Material Design',
-    },
-    {
-      path: 'assets/icons/skill_icons/wordpress.svg',
-      caption: 'Wordpress',
-    },
-  ];
+export class SkillsComponent implements OnInit {
+  staticContent: Static | null = null;
+  jsonContent: Translations | null = null;
+  // skillsText: string = '';
+
+  constructor(
+    private staticContentService: StaticContentService,
+    private translationService: TranslationService) {}
+
+    ngOnInit(): void {
+      this.staticContentService.getStaticContent().subscribe((data: Static) => {
+        this.staticContent = data;
+      });
+
+      this.translationService.translations$.subscribe(
+        (data: Translations | null) => {
+          console.log('Übersetzungen geladen: ', data);
+          this.jsonContent = data;
+        }
+      );
+  
+      this.translationService
+        .loadTranslations(this.translationService.getCurrentLanguage())
+        .subscribe();
+    }
 }

@@ -58,7 +58,35 @@
       "caption": "Wordpress"
     }
   ],
-  "portfolio_title": "Portfolio",
+  "portfolio": {
+    "title": "Portfolio",
+    "projects": {
+      "join": {
+        "title": "Join", 
+        "path": "join.png",
+        "skills": ["HTML", "CSS", "JavaScript"],
+        "code_button": "Github"
+      },
+      "mermaid": {
+        "title": "Mermaid", 
+        "path": "mermaid.png",
+        "skills": ["HTML", "CSS", "JavaScript/ OOP"],
+        "code_button": "Github"
+      },
+      "pokedex": {
+        "title": "Pokedex", 
+        "path": "pokedex.png",
+        "skills": ["HTML", "CSS", "JavaScript", "API"],
+        "code_button": "Github"
+      },
+      "da_bubble": {
+        "title": "DABubble", 
+        "path": "bubble.png",
+        "skills": ["HTML", "CSS", "TypeScript", "Angular", "Firebase"],
+        "code_button": "Github"
+      }
+    }
+  },
   "arrow_up": [
     "assets/icons/arrows_light/arrow_1.svg",
     "assets/icons/arrows_light/arrow_2.svg"

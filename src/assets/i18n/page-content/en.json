@@ -22,30 +22,26 @@
     "projects": [
       {
         "join": {
-          "path": "join.png",
           "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-          "skills": ["HTML", "CSS", "JavaScript"],
-          "test_button": "Try it out",
-          "code_button": "Github"
-        }
-      }, 
-      {
-        "mermaid": {
-          "path": "mermaid.png",
-          "description": "A simple swim-and-shoot game based on an object-oriented approach. Help the mermaid to find pearls and stars to fight against a variety of fish and collect the golden key to open the treasure chest in the end.",
-          "skills": ["JavaScript", "HTML", "CSS"],
-          "test_button": "Try it out",
-          "code_button": "Github"
+          "test_button": "Try it out"
         }
       },
-
+      {
+        "mermaid": {
+          "description": "A swim-and-shoot game based on an object-oriented approach. Help the mermaid to find pearls and stars to fight against a variety of fish and collect the golden key to open the treasure chest in the end.",
+          "test_button": "Try it out"
+        }
+      },
       {
         "pokedex": {
-          "path": "pokedex.png",
           "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
-          "skills": ["JavaScript", "HTML", "CSS", "API"],
-          "test_button": "Try it out",
-          "code_button": "Github"
+          "test_button": "Try it out"
+        }
+      },
+      {
+        "da_bubble": {
+          "description": "A messaging app that enables users to create channels and to communicate in real time.",
+          "test_button": "Try it out"
         }
       }
     ]
@@ -57,10 +53,15 @@
     "name": "Your name",
     "email": "Your e-mail",
     "message": "Your message",
-    "confirmation": "I've read the privacy policy and agree to the processings of my data as outlined.",
-    "button": "Send message"
+    "confirmation_prefix": "I've read the",
+    "privacy_policy": "privacy policy",
+    "confirmation_suffix": "and agree to the processings of my data as outlined.",
+    "button": "Send message",
+    "success": "Your message has been successfully transmitted."
   },
   "footer": {
     "legal": "Legal notice"
   }
 }
+
+

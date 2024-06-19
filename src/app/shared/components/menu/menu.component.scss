@@ -18,22 +18,66 @@ section {
 nav {
   height: calc(100vh - $header-height - $footer-height - 200px);
   height: calc(100dvh - $header-height - $footer-height - 200px);
-    ul {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5em;
-        border: red 2px solid;
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    li {
+      width: 100%;
+      a {
+        display: block;
+        width: 100%;
+        position: relative;
+      }
     }
+  }
+}
+
+.menu-link {
+  padding: 0.25em;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  height: 40%;
+  max-height: 32px;
+  border: transparent 2px solid;
+  border-left-color: $font-color;
+  border-bottom-color: $font-color;
+}
+
+.menu-link:hover::after {
+  animation: animate 0.75s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    height: 0;
+    width: 0;
+    left: 0;
+    border-bottom-color: $font-color;
+  }
+  100% {
+    height: 0;
+    left: 60%;
+    width: 40%;
+    border-bottom-color: $font-color;
+  }
 }
 
 .menu-bottom {
   min-height: 200px;
   display: flex;
   align-items: center;
-//   justify-content: center;
   color: $background-color-light;
   background-color: $background-color-dark;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);

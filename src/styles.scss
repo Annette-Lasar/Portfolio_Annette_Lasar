@@ -24,6 +24,13 @@ html {
 body {
   background-color: $background-color-light;
   color: $font-color;
+  overflow: hidden;
+}
+
+#page {
+  scroll-behavior: smooth;
+  height: calc(100vh - $header-height);
+  overflow-y: auto;
 }
 
 h1,

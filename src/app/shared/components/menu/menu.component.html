@@ -1,10 +1,22 @@
-<section>
+<section *ngIf="jsonContent">
   <div class="wrapper">
     <nav>
       <ul>
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#portfolio">Projects</a></li>
+        <li>
+          <a href="#about" (click)="closeMenu()"
+            ><h1 class="menu-link" *ngIf="jsonContent.menu.about">{{jsonContent.menu.about}}</h1></a
+          >
+        </li>
+        <li>
+          <a href="#skills" (click)="closeMenu()"
+            ><h1 class="menu-link" *ngIf="jsonContent.menu.skills">{{jsonContent.menu.skills}}</h1></a
+          >
+        </li>
+        <li>
+          <a href="#portfolio" (click)="closeMenu()"
+            ><h1 class="menu-link" *ngIf="jsonContent.menu.portfolio">{{jsonContent.menu.portfolio}}</h1></a
+          >
+        </li>
       </ul>
     </nav>
     <div class="menu-bottom">

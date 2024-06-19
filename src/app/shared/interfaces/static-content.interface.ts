@@ -1,4 +1,5 @@
 import { CandidateSkills } from './candidate-skills.interface';
+import { Portfolio } from './portfolio.interface';
 
 export interface Static {
     german_flag: string;
@@ -11,7 +12,7 @@ export interface Static {
     arrows: string[];
     candidate_photo: string;
     candidate_skills: CandidateSkills[];
-    portfolio_title: string;
+    portfolio: Portfolio;
     arrow_up: string[];
     copyright: string;
     github_logo: string;
