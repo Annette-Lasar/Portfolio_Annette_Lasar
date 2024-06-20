@@ -5,14 +5,11 @@ section {
   margin: 0 auto;
   height: $header-height;
   padding-inline: 1em;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: $background-color-light;
+  border: blue 1px solid;
   .logo {
     height: 28px;
   }
@@ -136,4 +133,15 @@ img {
     -o-transform: translateY(-13px) rotate(90deg);
     transform: translateY(-13px) rotate(90deg);
   }
+}
+
+po-menu {
+  height: calc(100vh - $header-height);
+  width: 100%;
+  position: absolute;
+  top: $header-height;
+  left: 0;
+  z-index: 10;
+  background-color: $background-color-light;
+  border: red 2px solid;
 }

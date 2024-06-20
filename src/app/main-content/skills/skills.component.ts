@@ -30,7 +30,6 @@ export class SkillsComponent implements OnInit {
 
       this.translationService.translations$.subscribe(
         (data: Translations | null) => {
-          console.log('Übersetzungen geladen: ', data);
           this.jsonContent = data;
         }
       );

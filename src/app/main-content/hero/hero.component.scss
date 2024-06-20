@@ -1,9 +1,12 @@
 @import "../../../scss-styles/variables.scss";
 
 section {
-  min-height: calc(80vh - $header-height);
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: calc(100vh - $header-height);
   padding-inline: 1em;
   position: relative;
+  border: red 1px solid;
 }
 
 .title-box {
@@ -25,7 +28,8 @@ section {
 }
 
 .info-box {
-  margin: 3rem 0;
+  max-width: 1440px;
+  margin: 3rem auto;
   position: relative;
   display: flex;
   align-items: center;
@@ -41,13 +45,14 @@ section {
 }
 
 .splatter {
-  width: 100px;
+  width: clamp(96px, 10vw, 200px);
   position: absolute;
   left: 20%;
   bottom: 30%;
 }
 
 svg {
-  height: 96px;
+  /* height: 96px; */
+  max-height: 100%;
   max-width: 100%;
 }

@@ -6,7 +6,6 @@ import { TranslationService } from '../../shared/services/translation.service';
 import { Translations } from '../../shared/interfaces/translations.interface';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuStateService } from '../../shared/services/menu-state.service';
 import { MenuComponent } from '../../shared/components/menu/menu.component';
 
 @Component({
@@ -19,23 +18,15 @@ import { MenuComponent } from '../../shared/components/menu/menu.component';
 export class HeroComponent implements OnInit {
   staticContent: Static | null = null;
   jsonContent: Translations | null = null;
-  menuActive = false;
-  /* professionText: string = '';
-  buttonText: string = ''; */
 
   constructor(
     private staticContentService: StaticContentService,
-    private menuStateService: MenuStateService,
     private translationService: TranslationService
   ) {}
 
   ngOnInit(): void {
     this.staticContentService.getStaticContent().subscribe((data: Static) => {
       this.staticContent = data;
-    });
-
-    this.menuStateService.menuVisible$.subscribe((visible) => {
-      this.menuActive = visible;
     });
 
     this.translationService.translations$.subscribe(

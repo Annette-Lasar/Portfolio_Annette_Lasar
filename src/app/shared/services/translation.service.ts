@@ -15,12 +15,10 @@ export class TranslationService {
   constructor(private http: HttpClient) {}
 
   loadTranslations(language: string): Observable<Translations> {
-    console.log('Lade Übersetzungen für Sprache: ', language);
     return this.http
       .get<Translations>(`assets/i18n/page-content/${language}.json`)
       .pipe(
         map((translations) => {
-          console.log('Übersetzungen geladen: ', translations);
           this.translationsSubject.next(translations);
           this.currentLanguage = language;
           return translations;

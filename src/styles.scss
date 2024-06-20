@@ -45,21 +45,23 @@ h1 {
   font-family: "Syne", sans-serif;
 }
 
-h3,
-h4,
-po-button,
-p,
-a {
-  font-family: "Overpass", sans-serif;
-}
 
 h2 {
+  margin: 0 0 1em;
   font-size: clamp(1.5rem, 7vw, 4rem);
   text-align: center;
   font-weight: 800;
   &:hover {
     color: $accent-color;
   }
+}
+
+h3,
+h4,
+po-button,
+p,
+a {
+  font-family: "Overpass", sans-serif;
 }
 
 h4 {

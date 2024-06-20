@@ -6,11 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuStateService } from '../../services/menu-state.service';
 import { TranslationService } from '../../services/translation.service';
 import { LanguageOption } from '../../interfaces/language-option.interface';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'po-header',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, MenuComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit {
   selectedFlag = 'assets/icons/flags/english_flag.svg';
   dropdownOpen = false;
   isActive = false;
+  menuActive = false;
 
   languageOptions: LanguageOption[] = [];
 
@@ -55,6 +57,10 @@ export class HeaderComponent implements OnInit {
 
     this.menuStateService.burgerButtonActive$.subscribe(active => {
       this.isActive = active;
+    });
+
+    this.menuStateService.menuVisible$.subscribe((visible) => {
+      this.menuActive = visible;
     });
   }
 

@@ -1,5 +1,10 @@
 <section id="top" *ngIf="staticContent">
-  <img *ngIf="staticContent.candidate_logo" class="logo" src="{{staticContent.candidate_logo}}" alt="" />
+  <img
+    *ngIf="staticContent.candidate_logo"
+    class="logo"
+    src="{{ staticContent.candidate_logo }}"
+    alt=""
+  />
   <nav class="menu-box">
     <div class="custom-select-container">
       <div class="custom-select" (click)="toggleDropdown()">
@@ -29,4 +34,4 @@
     </div>
   </nav>
 </section>
-
+<po-menu [ngClass]="{ 'd-none': !menuActive }" class="main-menu"></po-menu>

@@ -1,14 +1,16 @@
 @import "../../../../scss-styles/variables.scss";
 
-section {
+/* section {
   height: calc(100vh - $header-height);
   width: 100%;
   position: fixed;
   top: $header-height;
   left: 0;
   z-index: 5;
+  display: block;
   background-color: $background-color-light;
-}
+  border: red 2px solid;
+} */
 
 .wrapper {
   max-width: 800px;

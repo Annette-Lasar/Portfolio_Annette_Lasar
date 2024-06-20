@@ -1,18 +1,20 @@
 <section *ngIf="staticContent && jsonContent">
-  <h2 id="about">{{jsonContent.about.about}}</h2>
-  <div class="text-box">
-    <p>
-      {{jsonContent.about.description}}
-    </p>
-    <p>{{jsonContent.about.request_to_contact}}</p>
+  <h2 id="about">{{ jsonContent.about.about }}</h2>
+  <div class="wrapper">
+    <div class="text-box">
+      <p>
+        {{ jsonContent.about.description }}
+      </p>
+      <p>{{ jsonContent.about.request_to_contact }}</p>
+    </div>
+    <div class="img-box">
+      <img
+        *ngIf="staticContent?.candidate_photo"
+        src="{{ staticContent.candidate_photo }}"
+        alt=""
+      />
+      <div class="frame"></div>
+    </div>
+    <po-button></po-button>
   </div>
-  <div class="img-box">
-    <img
-      *ngIf="staticContent?.candidate_photo"
-      src="{{ staticContent.candidate_photo }}"
-      alt=""
-    />
-    <div class="frame"></div>
-  </div>
-  <po-button></po-button>
 </section>
