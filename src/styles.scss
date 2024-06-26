@@ -34,15 +34,16 @@ body {
 }
 
 h1,
-h2 {
-  font-family: "Syne", sans-serif;
+h2,
+h5 {
+  font-family: $heading-font-family;
 }
 
 h1 {
   font-size: clamp(2rem, 9vw, 6rem);
   font-weight: 800;
   text-align: center;
-  font-family: "Syne", sans-serif;
+  font-family: $heading-font-family;
 }
 
 
@@ -61,19 +62,26 @@ h4,
 po-button,
 p,
 a {
-  font-family: "Overpass", sans-serif;
+  font-family: $text-font-family;
 }
 
 h4 {
+  margin: 0.25em 0 0;
   font-size: clamp(1.1rem, 5vw, 3rem);
   font-weight: 800;
-  font-family: "Overpass", sans-serif;
+  font-family: $text-font-family;
   color: $accent-color;
+}
+
+h5 {
+  margin: 1em 0 0.5em;
+  font-size: clamp(1.5rem, 2vw, 1.6rem);
+  font-weight: 900;
 }
 
 po-button {
   a {
-    width: 185px;
+    width: fit-content;
     height: 50px;
     margin: 0 auto;
     padding: 1em 2em;

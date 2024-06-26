@@ -1,6 +1,7 @@
 @import "../../../../scss-styles/variables.scss";
 
 section {
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   height: $header-height;
@@ -9,7 +10,6 @@ section {
   align-items: center;
   justify-content: space-between;
   background-color: $background-color-light;
-  border: blue 1px solid;
   .logo {
     height: 28px;
   }
@@ -26,12 +26,11 @@ img {
 .menu-box {
   display: flex;
   align-items: center;
-  justify-content:right;
+  justify-content: right;
   gap: 0.5em;
 }
 
 .custom-select-container {
-  position: relative;
   width: 50px;
 }
 
@@ -58,7 +57,7 @@ img {
   border: 1px solid #ccc;
   border-radius: 4px;
   background: white;
-  z-index: 1;
+  z-index: 15;
 }
 
 .custom-option {
@@ -105,9 +104,9 @@ img {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  -webkit-transition-delay: 0.4s;
-  -o-transition-delay: 0.4s;
-  transition-delay: 0.4s;
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -117,9 +116,9 @@ img {
   }
   &.is-active .line:nth-child(1),
   &.is-active .line:nth-child(3) {
-    -webkit-transition-delay: 0.2s;
-    -o-transition-delay: 0.2s;
-    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.1s;
+    -o-transition-delay: 0.1s;
+    transition-delay: 0.1s;
   }
   &.is-active .line:nth-child(1) {
     -webkit-transform: translateY(13px);
@@ -143,5 +142,4 @@ po-menu {
   left: 0;
   z-index: 10;
   background-color: $background-color-light;
-  border: red 2px solid;
 }

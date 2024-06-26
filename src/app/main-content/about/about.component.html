@@ -6,6 +6,7 @@
         {{ jsonContent.about.description }}
       </p>
       <p>{{ jsonContent.about.request_to_contact }}</p>
+      <po-button [caption]="jsonContent.about.button"></po-button>
     </div>
     <div class="img-box">
       <img
@@ -15,6 +16,8 @@
       />
       <div class="frame"></div>
     </div>
-    <po-button></po-button>
+  </div>
+  <div class="diagonal-arrow-box">
+    <img src="{{staticContent.arrows[1]}}" alt="">
   </div>
 </section>

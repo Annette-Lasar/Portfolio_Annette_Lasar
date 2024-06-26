@@ -1,11 +1,6 @@
-<section>
-  <h2>Say Hi!</h2>
-
-  <h3>Want to discuss a new project?</h3>
-  <p>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate nobis
-    dignissimos ex veritatis tempore facere, neque unde dolor nulla officia,
-    repellat vero consequuntur doloribus provident perspiciatis qui suscipit
-    tenetur expedita.
-  </p>
+<section *ngIf="jsonContent">
+  <h2 class="greeting">{{jsonContent.contact.greeting}}</h2>
+  <h3>{{jsonContent.contact.question}}</h3>
+  <p class="request-to-contact">{{jsonContent.contact.request_to_contact}}</p>
+  <po-contact-form></po-contact-form>
 </section>

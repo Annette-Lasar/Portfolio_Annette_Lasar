@@ -1,3 +1,5 @@
+@import "../../scss-styles/variables.scss";
+
 section {
     padding: 1em;
 }
@@ -15,6 +17,6 @@ h2 {
 li {
     margin-inline-start: 0.5em;
     padding-inline-start: 0.25em;
-    font-family: 'Overpass', sans-serif;
+    font-family: $text-font-family;
     list-style-type: disc;
 }

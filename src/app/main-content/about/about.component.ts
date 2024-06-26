@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { StaticContentService } from '../../shared/services/static-content.service';
 import { Static } from '../../shared/interfaces/static-content.interface';
 import { TranslationService } from '../../shared/services/translation.service';
-import { CommonModule } from '@angular/common';
+import { Translations } from '../../shared/interfaces/translations.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from '../../shared/components/button/button.component';
-import { Translations } from '../../shared/interfaces/translations.interface';
+
 
 @Component({
   selector: 'po-about',

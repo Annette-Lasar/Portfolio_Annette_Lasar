@@ -1,54 +1,20 @@
-<!-- <section id="portfolio" *ngIf="staticContent && jsonContent">
-  <h2 *ngIf="staticContent.portfolio.title">
-    {{ staticContent.portfolio.title }}
-  </h2>
-  <p>{{ jsonContent.portfolio.introduction }}</p>
-  <ul class="project-list">
-    <li *ngFor="let project of jsonContent.portfolio.projects">
-      <div *ngFor="let key of getProjectKeys(project)">
-        <ng-container
-          *ngIf="let staticProject of staticContent.portfolio.projects"
+<section *ngIf="staticContent && jsonContent">
+  <div class="wrapper">
+    <h2 id="portfolio" *ngIf="staticContent.portfolio.title">
+      {{ staticContent.portfolio.title }}
+    </h2>
+    <p *ngIf="jsonContent.portfolio.introduction" class="introduction">
+      {{ jsonContent.portfolio.introduction }}
+    </p>
+    <ul class="project-list">
+      <li>
+        <po-project
+          [staticContent]="staticContent"
+          [jsonContent]="jsonContent"
+          [staticContentProjects]="staticContent.portfolio.projects"
         >
-          <ng-container *ngIf="let staticKey of getProjectKeys(staticProject)">
-            <h3>{{ staticProject[staticKey].title }}</h3>
-            <p>{{ project[key].description }}</p>
-            <button>{{ project[key].test_button }}</button>
-          </ng-container>
-        </ng-container>
-      </div>
-    </li>
-  </ul>
-</section> -->
-
-<section id="portfolio" *ngIf="staticContent && jsonContent">
-  <h2 *ngIf="staticContent.portfolio.title">
-    {{ staticContent.portfolio.title }}
-  </h2>
-  <p>{{ jsonContent.portfolio.introduction }}</p>
-  <ul class="project-list">
-    <li *ngFor="let project of jsonContent.portfolio.projects; let i = index">
-      <div *ngFor="let key of getProjectKeys(project)">
-        <ng-container *ngIf="staticContent.portfolio.projects[key]">
-          <div class="project-number">
-            {{ i + 1 }} / {{ jsonContent.portfolio.projects.length }}
-          </div>
-          <img
-            [src]="
-              'assets/img/projects/' +
-              staticContent.portfolio.projects[key].path
-            "
-            alt=""
-          />
-          <h3>{{ staticContent.portfolio.projects[key].title }}</h3>
-          <h5
-            *ngFor="let skill of staticContent.portfolio.projects[key].skills"
-          >
-            {{ skill }}
-          </h5>
-          <p>{{ project[key].description }}</p>
-          <button>{{ project[key].test_button }}</button>
-        </ng-container>
-      </div>
-    </li>
-  </ul>
+        </po-project>
+      </li>
+    </ul>
+  </div>
 </section>

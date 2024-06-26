@@ -39,4 +39,8 @@ export class HeroComponent implements OnInit {
       .loadTranslations(this.translationService.getCurrentLanguage())
       .subscribe();
   }
+
+  isCurrentLanguage(lang: string): boolean {
+    return this.translationService.getCurrentLanguage() === lang;
+  }
 }

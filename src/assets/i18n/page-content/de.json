@@ -18,7 +18,7 @@
     "skills": "Meine Fähigkeiten"
   },
   "portfolio": {
-    "introduction": "Erkunden Sie hier eine Auswahl meiner Arbeit. - Probieren Sie die Projekte aus, um meine Fähigkeiten in Aktion zu sehen. Beim Programmieren folge ich stets dem Grundsatz 'Small Screen First.",
+    "introduction": "Erkunden Sie hier eine Auswahl meiner Arbeit. - Probieren Sie die Projekte aus, um meine Fähigkeiten in Aktion zu sehen. Beim Programmieren folge ich stets dem Grundsatz 'Small Screen First'.",
     "projects": [
       {
         "join": {
@@ -49,7 +49,7 @@
   "contact": {
     "greeting": "Sagen Sie Hallo!",
     "question": "Möchten Sie über ein neues Projekt sprechen?",
-    "request_to_contact": "Sagen Sie Hallo! Diskutieren wir Ihre Ideen und legen wir los.",
+    "request_to_contact": "Sagen Sie Hallo! Besprechen wir Ihre Ideen und legen wir los.",
     "name": "Ihr Name",
     "email": "Ihre E-Mail-Adresse",
     "message": "Ihre Nachricht",

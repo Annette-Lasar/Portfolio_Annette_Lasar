@@ -8,6 +8,7 @@ import { ProjectComponent } from '../project/project.component';
 import { Translations } from '../../shared/interfaces/translations.interface';
 import { ProjectWrapper } from '../../shared/interfaces/project-wrapper.interface';
 
+
 @Component({
   selector: 'po-portfolio',
   standalone: true,

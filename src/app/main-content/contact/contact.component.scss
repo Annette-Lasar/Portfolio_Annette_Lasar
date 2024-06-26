@@ -1,8 +1,8 @@
 @import '../../../scss-styles/variables.scss';
 
 section {
-  padding: 3.5em 1em 1em;
-  height: 50vh;
+  margin: 0 0 -1px;
+  padding: 8em 1em 1em;
   overflow: hidden;
   background-color: $background-color-dark;
   color: $background-color-light;
@@ -10,13 +10,21 @@ section {
   
 }
 
-h2 {
-  margin: 0 0 1em;
+.greeting {
+  max-width: 1440px;
+  margin: 0 auto 1em;
   text-align: left;
 }
 
 h3 {
+  margin: 2em 0 1.5em;
   text-align: center;
   color: $accent-color;
   font-weight: 600;
+}
+
+.request-to-contact {
+  margin: 0 0 1em;
+  text-align: center;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
 }

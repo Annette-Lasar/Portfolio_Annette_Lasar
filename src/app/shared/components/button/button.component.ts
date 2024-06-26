@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'po-button',
@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  buttonText: string = 'Send a message';
+@Input() caption: string = '';
 }

@@ -1,8 +1,21 @@
 <section *ngIf="staticContent && jsonContent">
   <div class="skill-wrapper">
-    <h2 id="skills" *ngIf="jsonContent.skills.skills">{{jsonContent.skills.skills}}</h2>
+    <h2
+      id="skills"
+      *ngIf="jsonContent.skills.skills"
+      [ngClass]="{
+        english: isCurrentLanguage('en'),
+        german: isCurrentLanguage('de'),
+        french: isCurrentLanguage('fr')
+      }"
+    >
+      {{ jsonContent.skills.skills }}
+    </h2>
     <div class="skill-box">
-      <div *ngFor="let icon of staticContent?.candidate_skills" class="icon-box">
+      <div
+        *ngFor="let icon of staticContent?.candidate_skills"
+        class="icon-box"
+      >
         <img src="{{ icon.icon_path }}" alt="" />
         <p class="caption">{{ icon.caption }}</p>
       </div>

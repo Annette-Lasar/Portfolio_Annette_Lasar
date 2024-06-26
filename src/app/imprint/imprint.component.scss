@@ -2,7 +2,7 @@
 
 section {
     padding: 1em;
-    min-height: calc(100vh - $header-height - $footer-height);
+    min-height: calc(100vh - $header-height - $footer-height-small);
 }
 
 h1 {
@@ -15,4 +15,10 @@ h2 {
 
 .seal {
     margin: 1em 0 0;
+}
+
+@media (min-width: 50em) {
+    section {
+        min-height: calc(100vh - $header-height - $footer-height-large);
+    }
 }

@@ -1,4 +1,4 @@
-<section id="top" *ngIf="staticContent">
+<section id="top" *ngIf="staticContent && jsonContent">
   <img
     *ngIf="staticContent.candidate_logo"
     class="logo"
@@ -34,4 +34,6 @@
     </div>
   </nav>
 </section>
-<po-menu [ngClass]="{ 'd-none': !menuActive }" class="main-menu"></po-menu>
+<po-menu [ngClass]="{ 'd-none': !menuActive }" class="main-menu"
+[jsonContent]="jsonContent"
+[selectedLanguage]="selectedLanguage"></po-menu>

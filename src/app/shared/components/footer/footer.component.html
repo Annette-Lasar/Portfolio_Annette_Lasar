@@ -1,15 +1,44 @@
-<section>
-  <div class="name-box">
-    <img src="assets/icons/logo_lasar_dark.svg" alt="" />
-    <p class="name">&copy; Annette Lasar</p>
-  </div>
-
-  <div class="contact-icon-box">
+<section *ngIf="staticContent && jsonContent">
+  <div class="wrapper">
     <div class="icons">
-      <img src="assets/icons/contact_logos/github.svg" alt="" />
-      <img src="assets/icons/contact_logos/e_mail.svg" alt="" />
-      <img src="assets/icons/contact_logos/linkedin.svg" alt="" />
+      <a href="#">
+        <img
+          *ngIf="staticContent.github_logo"
+          src="{{ staticContent.github_logo }}"
+          alt=""
+        />
+      </a>
+      <a href="#">
+        <img
+          *ngIf="staticContent.email_logo"
+          src="{{ staticContent.email_logo }}"
+          alt=""
+        />
+      </a>
+      <a href="#">
+        <img
+          *ngIf="staticContent.linkedin_logo"
+          src="{{ staticContent.linkedin_logo }}"
+          alt=""
+        />
+      </a>
     </div>
-    <a routerLink="imprint">Legal notice</a>
+    <div class="candiate-logo-box">
+      <img
+        *ngIf="staticContent.candidate_logo"
+        src="{{ staticContent.candidate_logo }}"
+        alt=""
+      />
+    </div>
+    <div class="name-box">
+      <p *ngIf="staticContent.email" class="email">{{staticContent.email}}</p>
+      <p *ngIf="staticContent.candidate_name" class="name">
+        &copy; {{ staticContent.candidate_name }}
+      </p>
+    </div>
+
+    <div class="legal-box">
+      <a *ngIf="jsonContent.footer.legal" routerLink="imprint" class="legal">{{jsonContent.footer.legal}}</a>
+    </div>
   </div>
 </section>
