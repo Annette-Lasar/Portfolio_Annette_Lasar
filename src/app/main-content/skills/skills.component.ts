@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class SkillsComponent implements OnInit {
   staticContent: Static | null = null;
   jsonContent: Translations | null = null;
+  isHovered: boolean = false;
 
   constructor(
     private staticContentService: StaticContentService,
@@ -40,5 +41,9 @@ export class SkillsComponent implements OnInit {
 
   isCurrentLanguage(lang: string): boolean {
     return this.translationService.getCurrentLanguage() === lang;
+  }
+
+  toggleHover(state: boolean) {
+    this.isHovered = state;
   }
 }

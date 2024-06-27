@@ -15,7 +15,9 @@ section {
   margin: 0 auto 2em;
 }
 
-p, ul, button {
+p,
+ul,
+button {
   font-family: $text-font-family;
 }
 
@@ -23,5 +25,23 @@ img {
   filter: grayscale(100%);
   &:hover {
     filter: grayscale(0%);
+  }
+}
+
+.diagonal-arrow-box {
+  max-width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 2em;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    transform: rotate(45deg);
+    transition: transform 1.25s linear;
+    &.hovered {
+      transform: translateX(-100px) translateY(100px) rotate(45deg);
+    }
   }
 }

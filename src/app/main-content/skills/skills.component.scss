@@ -61,6 +61,24 @@ section {
     padding: 4em;
   }
 
+  .diagonal-arrow-box {
+    max-width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 2em;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      transform: rotate(-45deg);
+      transition: transform 1.25s linear;
+      &.hovered {
+        transform: translateX(100px) translateY(100px) rotate(-45deg);
+      }
+    }
+  }
+
   .skill-box {
     padding: 2em 1em;
   }

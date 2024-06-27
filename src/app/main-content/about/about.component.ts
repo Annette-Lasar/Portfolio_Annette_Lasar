@@ -7,7 +7,6 @@ import { Translations } from '../../shared/interfaces/translations.interface';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 
-
 @Component({
   selector: 'po-about',
   standalone: true,
@@ -18,6 +17,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
 export class AboutComponent implements OnInit {
   staticContent: Static | null = null;
   jsonContent: Translations | null = null;
+  isHovered: boolean = false;
 
   constructor(
     private staticContentService: StaticContentService,
@@ -38,5 +38,9 @@ export class AboutComponent implements OnInit {
     this.translationService
       .loadTranslations(this.translationService.getCurrentLanguage())
       .subscribe();
+  }
+
+  toggleHover(state: boolean) {
+    this.isHovered = state;
   }
 }

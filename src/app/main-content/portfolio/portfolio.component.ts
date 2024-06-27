@@ -19,6 +19,7 @@ import { ProjectWrapper } from '../../shared/interfaces/project-wrapper.interfac
 export class PortfolioComponent implements OnInit {
   staticContent: Static | null = null;
   jsonContent: Translations | null = null;
+  isHovered: boolean = false;
 
   constructor(
     private staticContentService: StaticContentService,
@@ -42,5 +43,9 @@ export class PortfolioComponent implements OnInit {
   }
   getProjectKeys(project: ProjectWrapper): string[] {
     return Object.keys(project);
+  }
+
+  toggleHover(state: boolean) {
+    this.isHovered = state;
   }
 }

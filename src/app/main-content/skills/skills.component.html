@@ -21,4 +21,11 @@
       </div>
     </div>
   </div>
+  <div class="diagonal-arrow-box" (mouseover)="toggleHover(true)">
+    <img
+      src="{{ staticContent.arrows[1] }}"
+      alt=""
+      [class.hovered]="isHovered"
+    />
+  </div>
 </section>

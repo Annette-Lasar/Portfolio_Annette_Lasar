@@ -17,7 +17,15 @@
       <div class="frame"></div>
     </div>
   </div>
-  <div class="diagonal-arrow-box">
-    <img src="{{staticContent.arrows[1]}}" alt="">
+  <div
+    class="diagonal-arrow-box"
+    (mouseover)="toggleHover(true)"
+    
+  >
+    <img
+      src="{{ staticContent.arrows[1] }}"
+      alt=""
+      [class.hovered]="isHovered"
+    />
   </div>
 </section>
