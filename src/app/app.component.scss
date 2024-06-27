@@ -5,3 +5,22 @@ po-header {
   align-items: center;
   justify-content: space-between;
 }
+
+@media (prefers-color-scheme: dark) {
+  #light-scheme-icon {
+    display: none;
+  }
+  #dark-scheme-icon {
+    display: unset;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  #dark-scheme-icon {
+    display: none;
+  }
+
+  #light-scheme-icon {
+    display: unset;
+  }
+}

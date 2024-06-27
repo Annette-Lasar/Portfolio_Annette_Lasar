@@ -5,6 +5,7 @@ export interface Static {
     german_flag: string;
     english_flag: string;
     french_flag: string;
+    favicon: string;
     candidate_logo: string;
     candidate_name: string;
     ink_blot: string;
